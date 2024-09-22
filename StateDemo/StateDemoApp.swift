@@ -9,9 +9,11 @@ import SwiftUI
 
 @main
 struct StateDemoApp: App {
+    @StateObject private var task = Task(name: "Complete This Task", isCompleted: false, lastCompleted: nil)
     var body: some Scene {
         WindowGroup {
             ContentView()
+                .environmentObject(task)
         }
     }
 }
